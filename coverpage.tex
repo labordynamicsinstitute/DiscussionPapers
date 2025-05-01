@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Set document parameters here for easy reuse
+\newcommand{\papertitle}{Title of Discussion Paper}
+\newcommand{\paperauthors}{Author One, Author Two}
+\newcommand{\papernumber}{Discussion Paper No. 2}
+\newcommand{\paperurl}{https://example.com/papers/paper2}
+\newcommand{\websiteurl}{https://example.com}
+\newcommand{\backgroundpdf}{LDI-Cover-Draft-1-page2.pdf}
+
+% Define positions for text elements on the page
+% X positions
+\newcommand{\xposition}{0.5\paperwidth}
+% Y positions
+\newcommand{\titleY}{-5cm}
+\newcommand{\authorY}{-7cm}
+\newcommand{\numberY}{-9cm}
+\newcommand{\paperurlY}{-26cm}
+\newcommand{\websiteurlY}{-27cm}
+
+% Define styles for text elements
+\newcommand{\titlestyle}{\color{black}\bfseries\huge\centering}
+\newcommand{\authorstyle}{\color{black}\Large\centering}
+\newcommand{\numberstyle}{\color{black}\large\centering}
+\newcommand{\urltextstyle}{\color{blue}\normalsize\centering}
+
+% Set page dimensions
+\geometry{
+  letterpaper,
+  margin=0in,
+  includeheadfoot
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% Add the background PDF
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{\backgroundpdf}%
+  }%
+}
+
+% Add overlay text elements
+\AddToShipoutPictureFG{%
+  % Title
+  \put(\xposition,\titleY){%
+    \makebox[0pt]{\titlestyle\papertitle}%
+  }%
+  % Authors
+  \put(\xposition,\authorY){%
+    \makebox[0pt]{\authorstyle\paperauthors}%
+  }%
+  % Paper number
+  \put(\xposition,\numberY){%
+    \makebox[0pt]{\numberstyle\papernumber}%
+  }%
+  % Paper URL
+  \put(\xposition,\paperurlY){%
+    \makebox[0pt]{\urltextstyle\url{\paperurl}}%
+  }%
+  % Website URL
+  \put(\xposition,\websiteurlY){%
+    \makebox[0pt]{\urltextstyle\url{\websiteurl}}%
+  }%
+}
+
+% The document itself is empty since all content is in the background PDF
+% and overlaid text elements
+\phantom{.} % Force output of a page with invisible content
+
+\end{document}
