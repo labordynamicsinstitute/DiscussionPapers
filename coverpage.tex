@@ -11,23 +11,34 @@
 \newcommand{\papernumber}{Discussion Paper No. 2}
 \newcommand{\paperurl}{https://example.com/papers/paper2}
 \newcommand{\websiteurl}{https://example.com}
-\newcommand{\backgroundpdf}{LDI-Cover-Draft-1-page2.pdf}
+\newcommand{\backgroundpdf}{LDI-Cover-Draft-2-page1.pdf}
+
+%Set PDF metadata
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={\paperauthors},
+  pdfsubject={\papernumber},
+  pdfkeywords={discussion paper},
+  colorlinks=false,
+  hidelinks=true,
+  pdfpagemode=UseNone
+}
 
 % Define positions for text elements on the page
 % X positions
 \newcommand{\xposition}{0.5\paperwidth}
 % Y positions
-\newcommand{\titleY}{-5cm}
-\newcommand{\authorY}{-7cm}
-\newcommand{\numberY}{-9cm}
-\newcommand{\paperurlY}{-26cm}
-\newcommand{\websiteurlY}{-27cm}
+\newcommand{\titleY}{0.5\paperheight}
+\newcommand{\authorY}{0.4\paperheight}
+\newcommand{\numberY}{5cm}
+\newcommand{\paperurlY}{4cm}
+\newcommand{\websiteurlY}{2cm}
 
 % Define styles for text elements
 \newcommand{\titlestyle}{\color{black}\bfseries\huge\centering}
 \newcommand{\authorstyle}{\color{black}\Large\centering}
 \newcommand{\numberstyle}{\color{black}\large\centering}
-\newcommand{\urltextstyle}{\color{blue}\normalsize\centering}
+\newcommand{\urltextstyle}{\color{black}\normalsize\centering}
 
 % Set page dimensions
 \geometry{
