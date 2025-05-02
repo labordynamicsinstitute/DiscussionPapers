@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{comment}
+
+% Set document parameters here for easy reuse
+\newcommand{\papertitle}{Eliciting time preferences when income and consumption vary: Theory, validation \& application to job search}
+\newcommand{\paperauthors}{Mich\'ele Belot, Philipp Kircher, and Paul Muller}
+\newcommand{\papernumber}{Discussion Paper No. 3}
+
+%\newcommand{\headername}{Network of Labor Economists}
+
+\newcommand{\titleone}{Eliciting time preferences when}
+\newcommand{\titletwo}{income and consumption vary: }
+\newcommand{\titlethree}{Theory, validation \& application to}
+\newcommand{\titlefour}{job search}
+
+%Set PDF metadata
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={\paperauthors},
+  pdfsubject={\papernumber},
+  pdfkeywords={discussion paper},
+  colorlinks=false,
+  hidelinks=true,
+  pdfpagemode=UseNone
+}
+
+% Define positions for text elements on the page
+% X positions
+\newcommand{\xposition}{0.25\paperwidth}
+% Y positions
+\newcommand{\titleY}{0.45\paperheight}
+\newcommand{\authorY}{0.35\paperheight}
+\newcommand{\numberY}{5cm}
+\newcommand{\paperurlY}{4cm}
+\newcommand{\websiteurlY}{2cm}
+
+\definecolor{Carnelian}{HTML}{B31B1B}
+
+% Define styles for text elements
+\newcommand{\titlestyle}{\color{Carnelian}\bfseries\LARGE\MakeUppercase}
+\newcommand{\authorstyle}{\color{Carnelian}\bfseries\Large}
+\newcommand{\numberstyle}{\color{black}\large}
+\newcommand{\urltextstyle}{\color{black}\normalsize}
+
+% Set page dimensions
+\geometry{
+  letterpaper,
+  margin=0in,
+  includeheadfoot
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% Add overlay text elements
+\AddToShipoutPictureFG{%
+  % Title
+  \put(0.06\paperwidth,0.45\paperheight){%
+    \makebox[\textwidth][l]{\titlestyle \titleone}%
+  }%
+  \put(0.06\paperwidth,0.41\paperheight){%
+    \makebox[\textwidth][l]{\titlestyle \titletwo}%
+  }%
+  \put(0.06\paperwidth,0.37\paperheight){%
+    \makebox[\textwidth][l]{\titlestyle \titlethree}%
+  }%
+  \put(0.06\paperwidth,0.33\paperheight){%
+    \makebox[\textwidth][l]{\titlestyle \titlefour}%
+  }%
+  % Authors
+  \put(0.06\paperwidth,0.22\paperheight){%
+    \makebox[\textwidth][l]{\authorstyle\paperauthors}%
+  }%
+  % Paper number
+  \put(0.06\paperwidth,0.78\paperheight){%
+    \makebox[\textwidth][l]{\numberstyle\papernumber}%
+  }%
+}
+
+% The document itself is empty since all content is in the background PDF
+% and overlaid text elements
+\mbox{}
+
+% Add the background PDF
+\ClearShipoutPicture
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{NOLE-Cover-Draft-2-page1.pdf}%
+  }%
+}
+
+\end{document}
