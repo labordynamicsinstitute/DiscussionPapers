@@ -7,12 +7,12 @@
 \usepackage{comment}
 
 % Set document parameters here for easy reuse
-\newcommand{\papertitle}{Eliciting time preferences when income and consumption vary: Theory, validation \& application to job search}
-\newcommand{\paperauthors}{Mich\'ele Belot, Philipp Kircher, and Paul Muller}
-\newcommand{\papernumber}{Discussion Paper No. 3}
+\newcommand{\papertitle}{Network Effects of Improved Social Collaboration: A full-text analysis in labor economics}
+\newcommand{\paperauthors}{Jason Sockin, Michèle Belot, Philipp Kircher, and Lars Vilhuber}
+\newcommand{\papernumber}{Discussion Paper No. 1}
 
 %\newcommand{\headername}{Network of Labor Economists}
-
+% THIS IS NOT SUSTAINABLE
 \newcommand{\titleone}{Eliciting time preferences when}
 \newcommand{\titletwo}{income and consumption vary: }
 \newcommand{\titlethree}{Theory, validation \& application to}
@@ -61,20 +61,25 @@
 \AddToShipoutPictureFG{%
   % Title
   \put(0.06\paperwidth,0.45\paperheight){%
-    \makebox[\textwidth][l]{\titlestyle \titleone}%
+    \begin{minipage}{0.8\paperwidth}
+    {\titlestyle \papertitle}
+    \end{minipage}%
+    %\makebox[\textwidth][l]{\titlestyle \papertitle}%
   }%
-  \put(0.06\paperwidth,0.41\paperheight){%
-    \makebox[\textwidth][l]{\titlestyle \titletwo}%
-  }%
-  \put(0.06\paperwidth,0.37\paperheight){%
-    \makebox[\textwidth][l]{\titlestyle \titlethree}%
-  }%
-  \put(0.06\paperwidth,0.33\paperheight){%
-    \makebox[\textwidth][l]{\titlestyle \titlefour}%
-  }%
+  % \put(0.06\paperwidth,0.41\paperheight){%
+  %   \makebox[\textwidth][l]{\titlestyle \titletwo}%
+  % }%
+  % \put(0.06\paperwidth,0.37\paperheight){%
+  %   \makebox[\textwidth][l]{\titlestyle \titlethree}%
+  % }%
+  % \put(0.06\paperwidth,0.33\paperheight){%
+  %   \makebox[\textwidth][l]{\titlestyle \titlefour}%
+  % }%
   % Authors
   \put(0.06\paperwidth,0.22\paperheight){%
-    \makebox[\textwidth][l]{\authorstyle\paperauthors}%
+    \begin{minipage}{0.6\paperwidth}
+    {\authorstyle\paperauthors}%
+    \end{minipage}
   }%
   % Paper number
   \put(0.06\paperwidth,0.78\paperheight){%
